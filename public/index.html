@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bindiya | Full Stack Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav>
+      <h2 class="logo">Bindiya</h2>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+ <section class="hero">
+  <div class="hero-content">
+
+    <div class="hero-text">
+      <h1 class="hero-name">Bindiya</h1>
+      <h2 class="typing-text">
+        I'm a <span id="typing"></span>
+      </h2>
+
+      <p class="hero-desc">
+        I build responsive, scalable and user-focused web applications 
+        with modern frontend design and powerful backend integration.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-secondary">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://i.postimg.cc/TPHDQYhV/bindu.jpg" alt="Bindiya">
+    </div>
+
+  </div>
+</section>
+
+
+
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+  <div class="about-container">
+    <h2>About Me</h2>
+
+    <p>
+      Hello! I'm <strong>Bindiya</strong>, a passionate and dedicated 
+      Full Stack Developer with a strong interest in building 
+      modern, responsive, and user-focused web applications.
+    </p>
+
+    <p>
+      I specialize in frontend technologies like HTML, CSS, and JavaScript, 
+      and backend development using Node.js and Express. I enjoy turning 
+      complex problems into simple, beautiful, and intuitive solutions.
+    </p>
+
+    <p>
+      I continuously work on improving my data structures, algorithms, 
+      and system design knowledge to strengthen my problem-solving skills 
+      and prepare myself for technical interviews.
+    </p>
+
+    <p>
+      My goal is to contribute to impactful projects, collaborate with 
+      innovative teams, and grow as a software developer while delivering 
+      high-quality and scalable solutions.
+    </p>
+
+  </div>
+</section>
+
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+  <div class="skills-container">
+    <h2>My Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-box">
+        <h3>Frontend</h3>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript (ES6+)</li>
+          <li>Responsive Design</li>
+          <li>DOM Manipulation</li>
+        </ul>
+      </div>
+
+      <div class="skill-box">
+        <h3>Backend</h3>
+        <ul>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>REST APIs</li>
+          <li>Middleware</li>
+          <li>Environment Variables</li>
+        </ul>
+      </div>
+
+      <div class="skill-box">
+        <h3>Tools</h3>
+        <ul>
+          <li>Git & GitHub</li>
+          <li>VS Code</li>
+          <li>Postman</li>
+          <li>npm</li>
+          <li>Chrome DevTools</li>
+        </ul>
+      </div>
+
+      <div class="skill-box">
+        <h3>Currently Improving</h3>
+        <ul>
+          <li>Data Structures & Algorithms</li>
+          <li>Problem Solving</li>
+          <li>Backend Architecture</li>
+          <li>Deployment (Render)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+      <h3>To-Do List</h3>
+      <p>Responsive task management application using JavaScript.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Inventory Distortion Checker</h3>
+      <p>Efficient inventory validation system.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Password Generator</h3>
+      <p>Generates secure passwords instantly.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> bindiyasbv9@gmail.com</p>
+      <p><strong>Phone:</strong> +91-7795493439</p>
+      <p><strong>LinkedIn:</strong> 
+        <a href="https://www.linkedin.com/in/bindiya-p-j-b8500138a" target="_blank">
+          View Profile
+        </a>
+      </p>
+    </div>
+
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p id="responseMsg"></p>
+  </section>
+
+</body>
+</html>
