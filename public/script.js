@@ -1,31 +1,30 @@
-document.getElementById("contactForm")
-.addEventListener("submit", async function(e) {
+document.querySelector("form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const responseMsg = document.getElementById("responseMsg");
-  responseMsg.innerText = "Sending message... ⏳";
-
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
+  const name = document.querySelector("#name").value;
+  const email = document.querySelector("#email").value;
+  const message = document.querySelector("#message").value;
 
   try {
-    const response = await fetch("/contact", {
+    const response = await fetch("/send", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message })
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, message }),
     });
 
-    const data = await response.json();
+    const result = await response.text();  // IMPORTANT
 
-    if (data.success) {
-      responseMsg.innerText = "Message sent successfully 🚀";
-      document.getElementById("contactForm").reset();
+    if (response.ok) {
+      alert("Message sent successfully ✅");
     } else {
-      responseMsg.innerText = "Failed to send ❌";
+      alert("Failed to send ❌");
     }
+
   } catch (error) {
-    responseMsg.innerText = "Server error ⚠️";
+    console.error(error);
+    alert("Error sending message ❌");
   }
 });
 const textArray = ["Full Stack Developer", "Frontend Enthusiast", "Problem Solver"];

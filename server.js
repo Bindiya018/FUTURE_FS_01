@@ -8,37 +8,25 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
-app.post("/contact", async (req, res) => {
-  const { name, email, message } = req.body;
-
+app.post("/send", async (req, res) => {
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
-      },
-    });
+    const { name, email, message } = req.body;
 
-    const mailOptions = {
+    await transporter.sendMail({
       from: process.env.EMAIL,
       to: process.env.EMAIL,
-      subject: `New Portfolio Message from ${name}`,
-      html: `
-        <h2>New Contact Request</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong> ${message}</p>
-      `,
-    };
+      subject: "New Contact Message",
+      text: `Name: ${name}
+Email: ${email}
+Message: ${message}`,
+    });
 
-    await transporter.sendMail(mailOptions);
-    res.json({ success: true, message: "Message sent successfully 🚀" });
+    res.status(200).send("Message sent successfully");
   } catch (error) {
-    res.json({ success: false, message: "Something went wrong ❌" });
+    console.error(error);
+    res.status(500).send("Error sending message");
   }
 });
-
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
